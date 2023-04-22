@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "daydream";
+    src: url("../assets/fonts/daydream\ FREE.ttf");
+}
+
+$font-brand:"daydream";
+
+@font-face {
+    font-family: "handlee";
+    src: url(../assets/fonts/Handlee/Handlee-Regular.ttf);
+}
+
+$font-section: "handlee";
+
+@font-face {
+    font-family: "simonetta";
+    src: url(../assets/fonts/Simonetta/Simonetta-Regular.ttf);
+}
+
+$font-brand2: "simonetta";
+
+@font-face {
+    font-family: "heebo";
+    src: url(../assets/fonts/Heebo/Heebo-VariableFont_wght.ttf);
+}
+
+$font-text:"heebo";

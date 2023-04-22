@@ -20,6 +20,7 @@ import lombok.Setter;
 
 @Table(name = "pictures")
 public class Picture {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
