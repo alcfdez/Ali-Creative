@@ -1,20 +1,21 @@
 <script setup>
 import Header from "../components/Header.vue"
-import Card from "../components/Card.vue"
+import FormAdd from "../components/FormAdd.vue"
 </script>
 
 <template>
   <main>
     <Header />
     <div class="title">
-    <h1>DESTACADOS</h1>
+    <h1>AÑADIR LÁMINA</h1>
     <img src="../assets/img/manchaMint.png" alt="">
      </div>
 
      <section>
-        <Card/>
+        <FormAdd/>
      </section>
   </main>
+  
 </template>
 
 <style lang="scss" scoped>
@@ -44,7 +45,6 @@ import Card from "../components/Card.vue"
 }
   section{
     margin: 1% 15%;
-    display: flex;
-    flex-direction: row;
+   
   }
 </style>

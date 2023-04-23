@@ -52,7 +52,7 @@ header {
   right: 0%;
   bottom: 0%;
   display: flex;
-  height: 12rem;
+  height: 10rem;
   -webkit-box-pack: center;
   justify-content: center;
   background-color: $lila;
@@ -103,7 +103,7 @@ header {
       background-color: $lila;
       margin-top: 0;
       padding: 5%;
-      width: 250px;
+      width: 270px;
       height: 100vw;
       font-family: $font-text;
       font-size: 2em;
@@ -134,7 +134,7 @@ header {
       h2{
         margin-top: 0.2em;
         margin-bottom: -2%;
-        font-size: 6em;
+        font-size: 5.5em;
         font-family: $font-brand;
         color: $purple;
         font-weight:500;
@@ -148,12 +148,12 @@ header {
         margin-bottom: 0.2em;
         font-family: $font-brand2;
         color: $purple;
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: bold;
        
        
         @media(max-width: 650px){
-          font-size: 1.5em ;
+          font-size: 1.2em ;
           align-items: center;
         }
 
