@@ -22,7 +22,7 @@
         <router-link to="/stationery" class="navLink" href=""
           >Papelería</router-link
         >
-        <router-link to="/mix" class="navLink" href="">mix</router-link>
+        <router-link to="/mix" class="navLink" href="">Mix</router-link>
         <router-link to="/form" class="navLink" href=""
           >Añadir Producto</router-link
         >
@@ -60,6 +60,7 @@ header {
 
   .menu {
     margin: auto;
+    
     ul {
       display: none;
     }
@@ -73,15 +74,16 @@ header {
     }
 
     label {
-      box-sizing: border-box;
+      margin-bottom: 8%;
+      // box-sizing: border-box;
       background: $lila;
-      box-sizing: border-box;
-      border-radius: 5px;
-      width: 100px;
-      height: 70px;
-      line-height: 30px;
+      // box-sizing: border-box;
+      // border-radius: 5px;
+      width: 80px;
+      height: 80px;
+      // line-height: 30px;
       font-weight: bold;
-      font-size: 6vw;
+      font-size: 5vw;
       color: $purple;
       text-align: center;
       user-select: none;
@@ -98,10 +100,14 @@ header {
     }
 
     ul {
+      background-color: $lila;
       margin-top: 0;
-      padding: 0;
-      width: 200px;
+      padding: 5%;
+      width: 250px;
+      height: 100vw;
       font-family: $font-text;
+      font-size: 2em;
+      color: $purple;
     }
 
     li {
