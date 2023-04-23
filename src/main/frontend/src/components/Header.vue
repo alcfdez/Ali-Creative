@@ -138,6 +138,10 @@ header {
         font-family: $font-brand;
         color: $purple;
         font-weight:500;
+
+        @media(max-width: 650px){
+          font-size: 4em ;
+        }
       }
 
       h3{
@@ -146,8 +150,21 @@ header {
         color: $purple;
         font-size: 2em;
         font-weight: bold;
+       
+       
+        @media(max-width: 650px){
+          font-size: 1.5em ;
+          align-items: center;
+        }
+
+        @media(max-width: 650px){
+          font-size: 1.5em ;
+          align-items: center;
+
+        }
       }
 
+        
   }
 
 }
