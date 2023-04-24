@@ -1,24 +1,73 @@
 <script setup>
+import {ref, reactive} from 'vue';
+import axios from 'axios';
+import FormService from '../services/FormService';
+
+
+const onfileChange = event => {
+  file.value = event.target.files[0];
+};
+const file= ref(null);
+const formService = new FormService()
+const titleModel = ref()
+const priceModel = ref()
+const sizeModel = ref()
+const techniqueModel = ref ()
+const descriptionModel = ref()
+const fileModel =ref()
+const form = reactive({
+  title: titleModel,
+  price: priceModel,
+  size: sizeModel,
+  technique: techniqueModel,
+  description: descriptionModel,
+  file: fileModel
+})
+
+const submitData = async () => {
+  try {
+    const formData = new FormData();
+    formData.append("title", titleModel.value);
+    formData.append("price", priceModel.value);
+    formData.append("size", sizeModel.value);
+    formData.append("techique", techniqueModel.value);
+    formData.append("description", descriptionModel.value);
+    formData.append("file", fileModel.value);
+
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/media/upload/post",
+      data: formData,
+      headers: {
+          "Content-Type": "multipart/form-data",
+        },
+    });
+    console.log("Enviado");
+  }catch(error){
+  console.log(error);
+  }
+}
+
 
 
 </script>
 
 <template>
   <div class="form">
-    <form action="/api/pictures" method="post">
+    <form action="/api/pictures" method="post" @submit.prevent>
       <div class="form-row">
         <label>Título</label>
-        <input type="text" />
+        <input v-model="titleModel" type="text" />
       </div>
 
       <div class="form-row">
         <label>Precio</label>
-        <input type="text" />
+        <input v-model="priceModel" type="text" />
       </div>
 
       <div class="form-row">
         <label>Tamaño</label>
-        <select name="tamaño" id="">
+        <select v-model="sizeModel" name="tamaño" id="">
           <option value="size">A3 - 42 x 29,7 cm</option>
           <option value="size">A4 - 29,7×21 cm</option>
           <option value="size">A5 - 21 x 14,8 cm</option>
@@ -29,7 +78,7 @@
 
       <div class="form-row">
         <label>Técnica</label>
-        <select name="Tecnica" id="">
+        <select v-model="techniqueModel" name="Tecnica" id="">
           <option value="technique">Acuarela</option>
           <option value="technique">Carboncillo-Grafito</option>
           <option value="technique">Pastel</option>
@@ -40,18 +89,19 @@
 
       <div class="form-row">
         <label>Imagen</label>
-        <input type="text" placeholder="Subir imagen" />
+        <input type="image" placeholder="Subir imagen" @change="onFileChange" v-bind:ref="file" />
       </div>
 
       <label class="description">Descripción</label>
       <textarea
+       v-model="descriptionModel"
         type="text"
         placeholder="Descripción de la obra ..."
       />
     </form>
 
     <div class="buttonsContainer">
-      <button @click="reload" class="button">Cancelar</button>
+      <!-- <button @click="cancel" class="button">Cancelar</button> -->
       <button @click="submitData" class="button">Aceptar</button>
     </div>
   </div>
