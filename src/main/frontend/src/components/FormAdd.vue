@@ -14,6 +14,7 @@ const priceModel = ref()
 const sizeModel = ref()
 const techniqueModel = ref ()
 const descriptionModel = ref()
+const typeModel = ref()
 const fileModel =ref()
 const form = reactive({
   title: titleModel,
@@ -21,6 +22,7 @@ const form = reactive({
   size: sizeModel,
   technique: techniqueModel,
   description: descriptionModel,
+  type:typeModel,
   file: fileModel
 })
 
@@ -31,21 +33,34 @@ const submitData = async () => {
     formData.append("price", priceModel.value);
     formData.append("size", sizeModel.value);
     formData.append("techique", techniqueModel.value);
+    formData.append("type", typeModel.value);
     formData.append("description", descriptionModel.value);
     formData.append("file", fileModel.value);
+    if (file.value != null) {
+      formData.append("file", file.value);
+
 
     await axios({
       method: "POST",
-      url: "http://localhost:8080/media/upload/post",
+      url: "http://localhost:8080/media/upload/picture",
       data: formData,
+      withCredentials: false,
       headers: {
           "Content-Type": "multipart/form-data",
         },
     });
+  } else {
+      await axios({
+        method: "POST",
+        url: "http://localhost:8080/api/picture/add",
+        data: post,
+        withCredentials: true,
+      });
+    }
     console.log("Enviado");
   }catch(error){
-  console.log(error);
-  }
+      console.log(error);
+    }
 }
 
 
@@ -64,6 +79,19 @@ const submitData = async () => {
         <label>Precio</label>
         <input v-model="priceModel" type="text" />
       </div>
+
+      <div class="form-row">
+        <label>Tipo</label>
+        <select v-model="typeModel" name="tipo" id="">
+          <option value="type">iniciales - nombres</option>
+          <option value="type">nombres</option>
+          <option value="type">infantil</option>
+          <option value="type">botánica</option>
+          <option value="type">papelería</option>
+          <option value="type">mix</option>
+        </select>
+      </div>
+
 
       <div class="form-row">
         <label>Tamaño</label>
@@ -89,7 +117,7 @@ const submitData = async () => {
 
       <div class="form-row">
         <label>Imagen</label>
-        <input type="file" placeholder="Subir imagen" @change="onFileChange" v-bind:ref="file" />
+        <input  type="file" placeholder="Subir imagen" @change="onfileChange" v-bind:ref="file" />
       </div>
 
       <label class="description">Descripción</label>

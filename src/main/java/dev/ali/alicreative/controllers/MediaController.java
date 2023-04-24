@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +30,7 @@ import lombok.AllArgsConstructor;
 public class MediaController {
     private final StorageService storageService;
     private final HttpServletRequest request;
-    private final PictureService postService;
+    private final PictureService pictureService;
 
     @PostMapping("upload")
     public Map<String, String> uploadFile(@RequestParam("file") MultipartFile multiparFile) {
@@ -64,12 +64,15 @@ public class MediaController {
                 .header(HttpHeaders.CONTENT_TYPE, contentType)
                 .body(file);
     }
-    @PostMapping("upload/post")
+
+    @CrossOrigin( origins = "*")
+    @PostMapping("upload/picture")
     public Map<String, String> uploadFile(@RequestParam("file") MultipartFile multipartFile, Picture picture) {
+        System.out.println(multipartFile.getOriginalFilename());
         // String url = "";
         // if (multipartFile != null) {
             picture.setImage(multipartFile.getOriginalFilename());
-            postService.save(picture);
+            pictureService.save(picture);
     
             String path = storageService.store(multipartFile);
             String host = request.getRequestURL().toString().replace(request.getRequestURI(), "");
