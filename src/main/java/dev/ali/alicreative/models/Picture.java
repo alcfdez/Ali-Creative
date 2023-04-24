@@ -44,6 +44,9 @@ public class Picture {
     @Column (name = "image")
     private String image;
 
+    @Column (name = "type")
+    private String type;
+
 
 
 

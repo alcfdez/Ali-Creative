@@ -43,7 +43,8 @@ const router = createRouter({
       path: '/form',
       name: 'form',
       component: () => import('../views/FormAddView.vue')
-    },{
+    },
+    {
       path: '/list',
       name: 'list',
       component: () => import('../views/ListView.vue')

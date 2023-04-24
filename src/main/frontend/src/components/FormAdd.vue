@@ -89,7 +89,7 @@ const submitData = async () => {
 
       <div class="form-row">
         <label>Imagen</label>
-        <input type="image" placeholder="Subir imagen" @change="onFileChange" v-bind:ref="file" />
+        <input type="file" placeholder="Subir imagen" @change="onFileChange" v-bind:ref="file" />
       </div>
 
       <label class="description">Descripción</label>

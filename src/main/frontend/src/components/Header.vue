@@ -5,7 +5,7 @@
     <div class="menu">
       <input type="checkbox" id="menu" />
       <label for="menu">
-        <i class="fa-solid fa-bars" style="color: #3a1464;"></i>
+        <i class="fa-solid fa-bars" style="color: #3a1464"></i>
       </label>
       <ul>
         <router-link to="/" class="nav-bar__link" href="">Home</router-link>
@@ -34,14 +34,12 @@
     <div class="nameBrand">
       <h2>Ali Creative</h2>
       <h3>ILUSTRADORA - MI ESPACIO CREATIVO</h3>
-
     </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
 @import "../scss/main.scss";
-
 
 header {
   width: 100%;
@@ -52,15 +50,17 @@ header {
   right: 0%;
   bottom: 0%;
   display: flex;
-  height: 10rem;
-  -webkit-box-pack: center;
-  justify-content: center;
+  height: 8rem;
+
   background-color: $lila;
   margin-bottom: 1px;
 
   .menu {
-    margin: auto;
-    
+    // margin-left: 2%;
+    position: absolute;
+    padding-top: 2.5%;
+    //  padding-left: 2%;
+
     ul {
       display: none;
     }
@@ -74,16 +74,14 @@ header {
     }
 
     label {
-      margin-bottom: 8%;
-      // box-sizing: border-box;
+      padding-bottom: 8%;
+
       background: $lila;
-      // box-sizing: border-box;
-      // border-radius: 5px;
-      width: 80px;
-      height: 80px;
-      // line-height: 30px;
+      width: 60px;
+      height: 60px;
+
       font-weight: bold;
-      font-size: 5vw;
+      font-size: 3vw;
       color: $purple;
       text-align: center;
       user-select: none;
@@ -96,7 +94,7 @@ header {
 
     /* Estilo del boton cuando el menú está expandido*/
     input:checked ~ label {
-      background:$lila;
+      background: $lila;
     }
 
     ul {
@@ -125,47 +123,42 @@ header {
     }
   }
 
-  .nameBrand{
-    display:flex ;
+  .nameBrand {
+    display: flex;
     flex-direction: column;
-    align-items:center ;
-    width: 90%;
+    align-items: center;
+    width: 100%;
 
-      h2{
-        margin-top: 0.2em;
-        margin-bottom: -2%;
-        font-size: 5.5em;
-        font-family: $font-brand;
-        color: $purple;
-        font-weight:500;
+    h2 {
+      margin-top: 0.1em;
+      margin-bottom: -2%;
+      font-size: 5em;
+      font-family: $font-brand;
+      color: $purple;
+      font-weight: 500;
 
-        @media(max-width: 650px){
-          font-size: 4em ;
-        }
+      @media (max-width: 650px) {
+        font-size: 3em;
+      }
+    }
+
+    h3 {
+      margin-bottom: 0.2em;
+      font-family: $font-brand2;
+      color: $purple;
+      font-size: 1.5em;
+      font-weight: bold;
+
+      @media (max-width: 650px) {
+        font-size: 1em;
+        align-items: center;
       }
 
-      h3{
-        margin-bottom: 0.2em;
-        font-family: $font-brand2;
-        color: $purple;
+      @media (max-width: 650px) {
         font-size: 1.5em;
-        font-weight: bold;
-       
-       
-        @media(max-width: 650px){
-          font-size: 1.2em ;
-          align-items: center;
-        }
-
-        @media(max-width: 650px){
-          font-size: 1.5em ;
-          align-items: center;
-
-        }
+        align-items: center;
       }
-
-        
+    }
   }
-
 }
 </style>

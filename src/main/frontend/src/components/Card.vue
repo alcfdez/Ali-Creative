@@ -11,6 +11,33 @@
         <i class="fa-solid fa-plus" style="color: #3a1464;"></i>
     </button>
     </div>
+
+    <div class="card">
+        <img src="../assets/img/Cisne.jpg" alt="pavo real">
+            <p>40 €</p>
+            <p>Pavo Real</p>
+            <button>
+        <i class="fa-solid fa-plus" style="color: #3a1464;"></i>
+    </button>
+    </div>
+
+    <div class="card">
+        <img src="../assets/img/Flores-magenta.jpg" alt="flores magenta">
+            <p>15 €</p>
+            <p>Flores Magenta</p>
+            <button>
+        <i class="fa-solid fa-plus" style="color: #3a1464;"></i>
+    </button>
+    </div>
+
+    <div class="card">
+        <img src="../assets/img/Paisaje-Atardecer.jpg" alt="Atardecer">
+            <p>20 €</p>
+            <p>Atardecer</p>
+            <button>
+        <i class="fa-solid fa-plus" style="color: #3a1464;"></i>
+    </button>
+    </div>
 </template>
 
 <style lang="scss" scoped>

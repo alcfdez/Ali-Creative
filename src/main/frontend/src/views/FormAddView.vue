@@ -7,7 +7,7 @@ import FormAdd from "../components/FormAdd.vue"
   <main>
     <Header />
     <div class="title">
-    <h1>AÑADIR LÁMINA</h1>
+    <h1>AÑADIR PRODUCTO</h1>
     <img src="../assets/img/manchaMint.png" alt="">
      </div>
 
