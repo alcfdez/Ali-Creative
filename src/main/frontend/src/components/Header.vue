@@ -33,7 +33,7 @@
     </div>
     <div class="nameBrand">
       <h2>Ali Creative</h2>
-      <h3>ILUSTRADORA - MI ESPACIO CREATIVO</h3>
+      <h4>ILUSTRADORA - MI ESPACIO CREATIVO</h4>
     </div>
   </header>
 </template>
@@ -51,16 +51,17 @@ header {
   bottom: 0%;
   display: flex;
   height: 8rem;
-
   background-color: $lila;
   margin-bottom: 1px;
 
+  @media (max-width: 400px) {
+    height: 5rem;
+      }
   .menu {
-    // margin-left: 2%;
+   
     position: absolute;
     padding-top: 2.5%;
-    //  padding-left: 2%;
-
+   
     ul {
       display: none;
     }
@@ -142,7 +143,7 @@ header {
       }
     }
 
-    h3 {
+    h4 {
       margin-bottom: 0.2em;
       font-family: $font-brand2;
       color: $purple;
@@ -154,8 +155,8 @@ header {
         align-items: center;
       }
 
-      @media (max-width: 650px) {
-        font-size: 1.5em;
+      @media (max-width: 550px) {
+        font-size: .5em;
         align-items: center;
       }
     }

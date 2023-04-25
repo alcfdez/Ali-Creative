@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,11 +27,13 @@ public class PictureController {
 
     private final PictureService pictureService;
 
+    @CrossOrigin( origins = "*")
     @GetMapping(value = "")
     public List<Picture> getAllPictures(){
         return pictureService.findAll();
     }
 
+    @CrossOrigin( origins = "*")
     @GetMapping("/{id}")
     public Picture getfindById(@PathVariable Long id){
         return pictureService.findById(id);

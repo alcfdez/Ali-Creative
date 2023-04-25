@@ -54,7 +54,7 @@ const submitData = async () => {
         method: "POST",
         url: "http://localhost:8080/api/picture/add",
         data: post,
-        withCredentials: true,
+        withCredentials: false,
       });
     }
     console.log("Enviado");

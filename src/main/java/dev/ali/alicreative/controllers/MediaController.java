@@ -54,6 +54,7 @@ public class MediaController {
         return Map.of("url", url);
     }
 
+    @CrossOrigin( origins = "*")
     @GetMapping("{filename:.+}")
     public ResponseEntity<Resource> getFile(@PathVariable String filename) throws IOException {
         Resource file = storageService.loadAsResource(filename);

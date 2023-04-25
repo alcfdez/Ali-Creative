@@ -1,18 +1,20 @@
 <script setup>
 import Header from "../components/Header.vue"
+import List from "../components/List.vue"
+
 
 </script>
 
 <template>
+  <Header />
   <main>
-    <Header />
     <div class="title">
     <h1>LISTA DE PRODUCTOS</h1>
     <img src="../assets/img/manchaMint.png" alt="">
      </div>
 
      <section>
-        
+        <List/>
      </section>
   </main>
 </template>

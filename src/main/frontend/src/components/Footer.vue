@@ -4,19 +4,21 @@
 <template>
     <footer>
         
-        <img class="logo" src="../assets/img/aliCreative-logo.png" alt="logo Ali Creative">
-        <section class="contact">
+        <!-- <img class="logo" src="../assets/img/aliCreative-logo.png" alt="logo Ali Creative"> -->
+        <div class="contact" >
 <div class="contactDetail" >
-    <p>alinspirecreative</p>
+    
     <i class="fa-brands fa-instagram" style="color: #000000;"></i>
-</div>
-
-<div class="contactDetail" >
+    <a target="_blank" :href=" 'https://www.instagram.com/alinspirecreative/ '" > </a>
     <p>alinspirecreative</p>
-    <i class="fa-regular fa-envelope" style="color: #000000;"></i>
 </div>
 
-</section>
+<div class="contactDetail">
+    <i class="fa-regular fa-envelope" style="color: #000000;"></i>
+<p>alicreative@gmail.com</p>
+</div>
+</div>
+
 
 </footer>
 </template>
@@ -28,29 +30,39 @@ footer{
 height: 7em;
 width: 100%;
 background-color: $bone;
-display: flex;
-flex-direction:row ;
 
-    .logo{
-        display: flex;
-        justify-items: flex-start;
-        width: 20%;
-        height: 20%;
-    }
 
-    .contac{
+
+    // .logo{
+    //     display: flex;
+    //     justify-items: flex-start;
+    //     width: 20%;
+    //     height: 20%;
+    // }
+
+    .contact{
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+       width: 30%;
+       margin-left: 70%;
+       justify-content: center;
+       padding-top: 3em;
+       
 
-        .contactDetail{
+       
+       .contactDetail{
+            font-family: $font-section;
+            font-size: 1em;
+            font-weight: 600;
+            color: black;
             display: flex;
             flex-direction: row;
-            font-family: $font-section;
+            gap:3px;
+        }
 
         }
 
-    }
+  
 
 }
 

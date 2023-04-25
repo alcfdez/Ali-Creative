@@ -4,3 +4,7 @@
 @forward 'mixins';
 
 
+.router-link-exact-active {
+    border-bottom: 4px solid #3A1464;
+    font-weight: 700;
+}

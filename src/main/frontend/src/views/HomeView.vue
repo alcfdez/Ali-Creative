@@ -8,7 +8,7 @@ import Footer from "../components/Footer.vue"
   <Header />
   <main>
     <div class="title">
-    <h1>DESTACADOS</h1>
+    <h2>DESTACADOS</h2>
     <img src="../assets/img/manchaMint.png" alt="mancha pincel mint">
      </div>
 
@@ -17,7 +17,7 @@ import Footer from "../components/Footer.vue"
      </section>
 
      <div class="title">
-     <h1>GALERIA</h1>
+     <h2>GALERIA</h2>
      <img src="../assets/img/manchaMint.png" alt="mancha pincel mint">
    </div>
 
@@ -35,7 +35,7 @@ import Footer from "../components/Footer.vue"
     </section>
 
   </main>
-  <!-- <Footer/> -->
+  <Footer/>
 
 </template>
 
@@ -52,7 +52,7 @@ import Footer from "../components/Footer.vue"
   align-items: center;
   justify-content: center;
   
-  h1{
+  h2{
     margin-left: 10%;
     font-family: $font-section;
     font-size: 3em;
@@ -60,6 +60,7 @@ import Footer from "../components/Footer.vue"
     z-index: 1;
 
     @media (max-width: 650px) {
+   
        font-size: 2em;
       }
   }
@@ -70,15 +71,21 @@ import Footer from "../components/Footer.vue"
   }
 }
   .cards{
-    margin: 1% 15%;
+    margin: 1% 20%;
     margin-bottom: 5%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
+
+    @media (max-width: 850px) {
+        justify-content: center;
+        gap: 1.5em;
+      }
 
     @media (max-width: 600px) {
         flex-direction: column;
-        margin-bottom: 10%;
+        
       }
     
   }
