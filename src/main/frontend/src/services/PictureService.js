@@ -20,9 +20,9 @@ export default class PictureService {
             method: "GET",
             url: this.#url,
            
-        }).then((getPicture) =>{
-            this.picture.value=getPicture.data
-            console.log(getPicture.data)
+        }).then((response) =>{
+            this.picture.value=response.data
+            console.log(response.data)
         });
       
     } catch (err) {
