@@ -75,10 +75,11 @@ import Footer from "../components/Footer.vue"
     margin-bottom: 5%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
-
+    gap: 3em;
+    
     @media (max-width: 850px) {
+      flex-wrap: wrap;
         justify-content: center;
         gap: 1.5em;
       }

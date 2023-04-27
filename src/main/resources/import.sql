@@ -1,0 +1,1 @@
+INSERT INTO pictures (id, title, price, description, size, technique, image, type ) VALUES (default, 'rosas', 25, 'lámina rosas moradas en acuarela', 'A4', 'acuarela', 'RosasLilas.jpg', 'botánica')

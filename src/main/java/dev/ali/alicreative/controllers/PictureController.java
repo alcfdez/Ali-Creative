@@ -30,7 +30,7 @@ public class PictureController {
     @CrossOrigin( origins = "*")
     @GetMapping(value = "")
     public List<Picture> getAllPictures(){
-        return pictureService.findAll();
+        return pictureService.getAll();
     }
 
     @CrossOrigin( origins = "*")

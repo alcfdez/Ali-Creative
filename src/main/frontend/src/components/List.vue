@@ -5,35 +5,38 @@ import PictureService from "../services/PictureService"
 
 
 
-// onBeforeMount(() => {
-//   axios({
-//     method: "GET",
-//     url: "http://localhost:8080/api/pictures/{id}" ,
-//     withCredentials: false,
-//   })
-//     .then((response) => {
-//       picture.value = response.data;
-//     })
-//     .catch((e) => {
-//       console.log("error");
-//     });
-// });
+const props = defineProps({
+  picture: Object,
+})
 
-const service = new PictureService();
-const pictures = reactive([]);
+const products = ref([])
 
-onBeforeMount(async () => {
-  await service.fetchAllPicture();
-  pictures.value = service.getPictures();
-  console.log(service.getPictures());
-  console.log(pictures.value);
+onBeforeMount(() => {
+  axios({
+    method: "GET",
+    url: "http://localhost:8080/api/pictures" ,
+    withCredentials: false,
+  })
+    .then((response) => {
+      products.value = response.data;
+      console.log(products.value);
+    })
+    .catch((e) => {
+      console.log("error" + e);
+    });
 });
 
+// const service = new PictureService();
+// const pictures = reactive([]);
+
+// onBeforeMount(async () => {
+//   await service.fetchAllPicture();
+//   pictures.value = service.getPictures();
+//   console.log(service.getPictures());
+//   console.log(pictures.value);
+// });
 
 
-const props = defineProps({
-	picture: Object,
-})
 
 window.addEventListener("DOMContentLoaded", () => {
 	const buttonDelete = document.querySelector(".button-delete");
