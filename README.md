@@ -11,6 +11,16 @@ In the project directory, you can run:
 
 ###  `npm install`
 
+# frontend
+
+This template should help get you started developing with Vue 3 in Vite.
+
+For go to Frontend used this commands
+
+```sh
+cd src/main/frontend
+```
+
 To use the npm package
 
 ### `npm run dev`
@@ -29,6 +39,9 @@ Runs the proyect backend server
 
 
 ## Figma 
+
+<img width="485" alt="prototypeAliCreative" src="https://user-images.githubusercontent.com/116891108/234956861-bd68be1b-ac3a-42df-afc6-8ac0ff9424e0.png">
+
 
 
 ### Prototype
